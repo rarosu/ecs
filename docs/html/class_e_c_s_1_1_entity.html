@@ -63,6 +63,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -70,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,23 +94,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ECS::Entity Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>An entity in the world.  
+ <a href="class_e_c_s_1_1_entity.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="entity_8h_source.html">entity.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a96a315e99204b7be2324c4b95be15a82"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96a315e99204b7be2324c4b95be15a82"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="memitem:a96a315e99204b7be2324c4b95be15a82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity.html#a96a315e99204b7be2324c4b95be15a82">id</a></td></tr>
 <tr class="separator:a96a315e99204b7be2324c4b95be15a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a3b15e6be91b1d7e5f066227db22d5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a3b15e6be91b1d7e5f066227db22d5c"></a>
-int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>flag</b></td></tr>
-<tr class="separator:a5a3b15e6be91b1d7e5f066227db22d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a379c4406de263f9fd2494b52b35666e1"><td class="memItemLeft" align="right" valign="top">std::bitset&lt; ECS_COMPONENT_COUNT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity.html#a379c4406de263f9fd2494b52b35666e1">components</a></td></tr>
+<tr class="separator:a379c4406de263f9fd2494b52b35666e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An entity in the world. </p>
+<p>An entity is basically a container for components. This structure only holds a set of flags of what components are associated with this entity. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a379c4406de263f9fd2494b52b35666e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::bitset&lt;ECS_COMPONENT_COUNT&gt; ECS::Entity::components</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A set of flags marking what components the entity contains. </p>
+
+</div>
+</div>
+<a class="anchor" id="a96a315e99204b7be2324c4b95be15a82"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ECS::Entity::id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A unique ID for the entity. These are reused after entities are removed. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>ecs/include/<a class="el" href="ecs_8h_source.html">ecs.h</a></li>
+<li>ecs/include/<a class="el" href="entity_8h_source.html">entity.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 21 2014 19:57:52 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 21 2014 21:27:14 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

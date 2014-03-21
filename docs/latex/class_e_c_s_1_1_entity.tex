@@ -1,17 +1,38 @@
 \hypertarget{class_e_c_s_1_1_entity}{\section{E\-C\-S\-:\-:Entity Class Reference}
 \label{class_e_c_s_1_1_entity}\index{E\-C\-S\-::\-Entity@{E\-C\-S\-::\-Entity}}
 }
+
+
+An entity in the world.  
+
+
+
+
+{\ttfamily \#include $<$entity.\-h$>$}
+
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_e_c_s_1_1_entity_a96a315e99204b7be2324c4b95be15a82}{int {\bfseries id}}\label{class_e_c_s_1_1_entity_a96a315e99204b7be2324c4b95be15a82}
-
+int \hyperlink{class_e_c_s_1_1_entity_a96a315e99204b7be2324c4b95be15a82}{id}
 \item 
-\hypertarget{class_e_c_s_1_1_entity_a5a3b15e6be91b1d7e5f066227db22d5c}{int64\-\_\-t {\bfseries flag}}\label{class_e_c_s_1_1_entity_a5a3b15e6be91b1d7e5f066227db22d5c}
-
+std\-::bitset$<$ E\-C\-S\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-\_\-\-C\-O\-U\-N\-T $>$ \hyperlink{class_e_c_s_1_1_entity_a379c4406de263f9fd2494b52b35666e1}{components}
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+An entity in the world. 
+
+An entity is basically a container for components. This structure only holds a set of flags of what components are associated with this entity. 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_e_c_s_1_1_entity_a379c4406de263f9fd2494b52b35666e1}{\index{E\-C\-S\-::\-Entity@{E\-C\-S\-::\-Entity}!components@{components}}
+\index{components@{components}!ECS::Entity@{E\-C\-S\-::\-Entity}}
+\subsubsection[{components}]{\setlength{\rightskip}{0pt plus 5cm}std\-::bitset$<$E\-C\-S\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-\_\-\-C\-O\-U\-N\-T$>$ E\-C\-S\-::\-Entity\-::components}}\label{class_e_c_s_1_1_entity_a379c4406de263f9fd2494b52b35666e1}
+A set of flags marking what components the entity contains. \hypertarget{class_e_c_s_1_1_entity_a96a315e99204b7be2324c4b95be15a82}{\index{E\-C\-S\-::\-Entity@{E\-C\-S\-::\-Entity}!id@{id}}
+\index{id@{id}!ECS::Entity@{E\-C\-S\-::\-Entity}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int E\-C\-S\-::\-Entity\-::id}}\label{class_e_c_s_1_1_entity_a96a315e99204b7be2324c4b95be15a82}
+A unique I\-D for the entity. These are reused after entities are removed. 
+
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-ecs/include/ecs.\-h\end{DoxyCompactItemize}
+ecs/include/entity.\-h\end{DoxyCompactItemize}

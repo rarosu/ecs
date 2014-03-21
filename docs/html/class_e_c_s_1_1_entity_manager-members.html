@@ -63,6 +63,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -70,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,14 +94,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>AddComponent</b>(Entity *entity) (defined in <a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a>)</td><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>CreateEntity</b>() (defined in <a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a>)</td><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>RemoveComponent</b>(Entity *entity) (defined in <a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a>)</td><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>RemoveEntity</b>(Entity *entity) (defined in <a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a>)</td><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a4c1d473501404323a532524f6afcbdfb">AddComponent</a>(Entity *entity)</td><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a5029d8ac52b5e171acf9f98d6513e87b">CreateEntity</a>()</td><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a3ffccf0260e106f39192872cf2cd47a0">RemoveComponent</a>(Entity *entity)</td><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html#ab469ce55513336256b521a8af38faeca">RemoveEntity</a>(Entity *entity)</td><td class="entry"><a class="el" href="class_e_c_s_1_1_entity_manager.html">ECS::EntityManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 21 2014 19:57:52 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 21 2014 21:27:14 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
