@@ -8,18 +8,23 @@ Manages all entities and components in the world.
 
 
 
-{\ttfamily \#include $<$ecs.\-h$>$}
+{\ttfamily \#include $<$entitymanager.\-h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_e_c_s_1_1_entity}{Entity} $\ast$ \hyperlink{class_e_c_s_1_1_entity_manager_a5029d8ac52b5e171acf9f98d6513e87b}{Create\-Entity} ()
+\hypertarget{class_e_c_s_1_1_entity_manager_a2b65211b0059901010486bcbedd84b96}{{\bfseries Entity\-Manager} (size\-\_\-t reserved\-Entity\-Count=R\-E\-S\-E\-R\-V\-E\-D\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-C\-O\-U\-N\-T)}\label{class_e_c_s_1_1_entity_manager_a2b65211b0059901010486bcbedd84b96}
+
+\item 
+Entity \hyperlink{class_e_c_s_1_1_entity_manager_a58a521f1a18027231d2895cf91a6b555}{Create\-Entity} ()
 \begin{DoxyCompactList}\small\item\em Creates an entity without components. \end{DoxyCompactList}\item 
-void \hyperlink{class_e_c_s_1_1_entity_manager_ab469ce55513336256b521a8af38faeca}{Remove\-Entity} (\hyperlink{class_e_c_s_1_1_entity}{Entity} $\ast$entity)
+void \hyperlink{class_e_c_s_1_1_entity_manager_ae3c584bf9245a3dcbafc1cc5ea93b642}{Remove\-Entity} (Entity entity)
 \begin{DoxyCompactList}\small\item\em Marks an entity and its components for removal and removes it from all systems. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{class_e_c_s_1_1_entity_manager_a4c1d473501404323a532524f6afcbdfb}{Add\-Component} (\hyperlink{class_e_c_s_1_1_entity}{Entity} $\ast$entity)
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{class_e_c_s_1_1_entity_manager_a735ab328f07b45342c392fe1f1b6f925}{Add\-Component} (Entity entity)
 \begin{DoxyCompactList}\small\item\em Create a component and add it to the entity. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T $>$ }\\void \hyperlink{class_e_c_s_1_1_entity_manager_a3ffccf0260e106f39192872cf2cd47a0}{Remove\-Component} (\hyperlink{class_e_c_s_1_1_entity}{Entity} $\ast$entity)
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{class_e_c_s_1_1_entity_manager_a7ee27d400563107f222693fb103c21ed}{Get\-Component} (Entity entity)
+\begin{DoxyCompactList}\small\item\em Get the component of type T on entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{class_e_c_s_1_1_entity_manager_a78ee8abb53ca6a324496ea839503ac3f}{Remove\-Component} (Entity entity)
 \begin{DoxyCompactList}\small\item\em Mark a component for removal and remove its flag from the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -27,55 +32,75 @@ void \hyperlink{class_e_c_s_1_1_entity_manager_ab469ce55513336256b521a8af38faeca
 Manages all entities and components in the world. 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_e_c_s_1_1_entity_manager_a4c1d473501404323a532524f6afcbdfb}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Add\-Component@{Add\-Component}}
+\hypertarget{class_e_c_s_1_1_entity_manager_a735ab328f07b45342c392fe1f1b6f925}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Add\-Component@{Add\-Component}}
 \index{Add\-Component@{Add\-Component}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
-\subsubsection[{Add\-Component}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$ E\-C\-S\-::\-Entity\-Manager\-::\-Add\-Component (
+\subsubsection[{Add\-Component}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ E\-C\-S\-::\-Entity\-Manager\-::\-Add\-Component (
 \begin{DoxyParamCaption}
-\item[{{\bf Entity} $\ast$}]{entity}
+\item[{Entity}]{entity}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_e_c_s_1_1_entity_manager_a4c1d473501404323a532524f6afcbdfb}
+)}}\label{class_e_c_s_1_1_entity_manager_a735ab328f07b45342c392fe1f1b6f925}
 
 
 Create a component and add it to the entity. 
 
-Template type T is the concrete type of the component. \hypertarget{class_e_c_s_1_1_entity_manager_a5029d8ac52b5e171acf9f98d6513e87b}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Create\-Entity@{Create\-Entity}}
+Template type T is the concrete type of the component.
+
+\begin{DoxyReturn}{Returns}
+The created component. 
+\end{DoxyReturn}
+\hypertarget{class_e_c_s_1_1_entity_manager_a58a521f1a18027231d2895cf91a6b555}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Create\-Entity@{Create\-Entity}}
 \index{Create\-Entity@{Create\-Entity}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
-\subsubsection[{Create\-Entity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entity}$\ast$ E\-C\-S\-::\-Entity\-Manager\-::\-Create\-Entity (
+\subsubsection[{Create\-Entity}]{\setlength{\rightskip}{0pt plus 5cm}Entity E\-C\-S\-::\-Entity\-Manager\-::\-Create\-Entity (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_e_c_s_1_1_entity_manager_a5029d8ac52b5e171acf9f98d6513e87b}
+)}}\label{class_e_c_s_1_1_entity_manager_a58a521f1a18027231d2895cf91a6b555}
 
 
 Creates an entity without components. 
 
 \begin{DoxyReturn}{Returns}
-\hyperlink{class_e_c_s_1_1_entity}{E\-C\-S\-::\-Entity}$\ast$ 
+The created entity. 
 \end{DoxyReturn}
-\hypertarget{class_e_c_s_1_1_entity_manager_a3ffccf0260e106f39192872cf2cd47a0}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Remove\-Component@{Remove\-Component}}
+\hypertarget{class_e_c_s_1_1_entity_manager_a7ee27d400563107f222693fb103c21ed}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Get\-Component@{Get\-Component}}
+\index{Get\-Component@{Get\-Component}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
+\subsubsection[{Get\-Component}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ E\-C\-S\-::\-Entity\-Manager\-::\-Get\-Component (
+\begin{DoxyParamCaption}
+\item[{Entity}]{entity}
+\end{DoxyParamCaption}
+)}}\label{class_e_c_s_1_1_entity_manager_a7ee27d400563107f222693fb103c21ed}
+
+
+Get the component of type T on entity. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_e_c_s_1_1_component}{Component} or nullptr if no component of type T exists on the entity. 
+\end{DoxyReturn}
+\hypertarget{class_e_c_s_1_1_entity_manager_a78ee8abb53ca6a324496ea839503ac3f}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Remove\-Component@{Remove\-Component}}
 \index{Remove\-Component@{Remove\-Component}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
 \subsubsection[{Remove\-Component}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void E\-C\-S\-::\-Entity\-Manager\-::\-Remove\-Component (
 \begin{DoxyParamCaption}
-\item[{{\bf Entity} $\ast$}]{entity}
+\item[{Entity}]{entity}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_e_c_s_1_1_entity_manager_a3ffccf0260e106f39192872cf2cd47a0}
+)}}\label{class_e_c_s_1_1_entity_manager_a78ee8abb53ca6a324496ea839503ac3f}
 
 
 Mark a component for removal and remove its flag from the entity. 
 
-Template type T is the concrete type of the component. This function will also remove the entity from all relevant systems. \hypertarget{class_e_c_s_1_1_entity_manager_ab469ce55513336256b521a8af38faeca}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Remove\-Entity@{Remove\-Entity}}
+Template type T is the concrete type of the component. This function will also remove the entity from all relevant systems. \hypertarget{class_e_c_s_1_1_entity_manager_ae3c584bf9245a3dcbafc1cc5ea93b642}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Remove\-Entity@{Remove\-Entity}}
 \index{Remove\-Entity@{Remove\-Entity}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
 \subsubsection[{Remove\-Entity}]{\setlength{\rightskip}{0pt plus 5cm}void E\-C\-S\-::\-Entity\-Manager\-::\-Remove\-Entity (
 \begin{DoxyParamCaption}
-\item[{{\bf Entity} $\ast$}]{entity}
+\item[{Entity}]{entity}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_e_c_s_1_1_entity_manager_ab469ce55513336256b521a8af38faeca}
+)}}\label{class_e_c_s_1_1_entity_manager_ae3c584bf9245a3dcbafc1cc5ea93b642}
 
 
 Marks an entity and its components for removal and removes it from all systems. 
 
-Note that this function does not actually delete the entity and its components. 
+This function will remove the entity from the processing list of all systems. It will not recycle or remove its components however; this will be done after the current system is finished processing. 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-ecs/include/ecs.\-h\end{DoxyCompactItemize}
+ecs/include/entitymanager.\-h\item 
+ecs/src/entitymanager.\-cpp\end{DoxyCompactItemize}

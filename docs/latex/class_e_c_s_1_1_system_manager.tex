@@ -1,0 +1,48 @@
+\hypertarget{class_e_c_s_1_1_system_manager}{\section{E\-C\-S\-:\-:System\-Manager Class Reference}
+\label{class_e_c_s_1_1_system_manager}\index{E\-C\-S\-::\-System\-Manager@{E\-C\-S\-::\-System\-Manager}}
+}
+
+
+Management class for entity systems.  
+
+
+
+
+{\ttfamily \#include $<$systemmanager.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_e_c_s_1_1_system_manager_a429f0b17229926adea3315c736232e7d}{Register\-System} (\hyperlink{class_e_c_s_1_1_entity_system}{Entity\-System} $\ast$system)
+\begin{DoxyCompactList}\small\item\em Registers a system within the manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Management class for entity systems. 
+
+This manager will keep track of all existing entity systems and update their processing list. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_e_c_s_1_1_system_manager_a429f0b17229926adea3315c736232e7d}{\index{E\-C\-S\-::\-System\-Manager@{E\-C\-S\-::\-System\-Manager}!Register\-System@{Register\-System}}
+\index{Register\-System@{Register\-System}!ECS::SystemManager@{E\-C\-S\-::\-System\-Manager}}
+\subsubsection[{Register\-System}]{\setlength{\rightskip}{0pt plus 5cm}void E\-C\-S\-::\-System\-Manager\-::\-Register\-System (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity\-System} $\ast$}]{system}
+\end{DoxyParamCaption}
+)}}\label{class_e_c_s_1_1_system_manager_a429f0b17229926adea3315c736232e7d}
+
+
+Registers a system within the manager. 
+
+This will transfer control of the system from the user to the manager. The manager will delete it later.
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & A heap-\/allocated entity system. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+ecs/include/systemmanager.\-h\end{DoxyCompactItemize}

@@ -9,13 +9,13 @@ project(${PROJECT_NAME})
 find_package(Threads REQUIRED)
 find_package(GTest REQUIRED)
 set(EXTERNAL_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/../ecs/include/" ${GTEST_INCLUDE_DIRS})
-set(EXTERNAL_LIBRARIES ${GTEST_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+set(EXTERNAL_LIBRARIES ${GTEST_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ecs)
 
 include_directories(${EXTERNAL_INCLUDE_DIRS})
 
 # Setup the executable
 set(HEADERS )
-set(SOURCES src/tests.cpp)
+set(SOURCES src/tests.cpp src/test_component.cpp src/test_entitymanager.cpp)
 
 add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} ${EXTERNAL_LIBRARIES})

@@ -1,26 +1,27 @@
 #pragma once
 
 #include <bitset>
+#include "config.h"
 
 namespace ECS
 {
     /**
-     * @brief An entity in the world.
+     * @brief Entity type. A UUID (in this context) to identify an entity.
      *
-     * An entity is basically a container for components. This structure only
-     * holds a set of flags of what components are associated with this entity.
+     * This is the only handle used externally. It is unique so that removed and recycled
+     * entities will not be accessed accidentally.
      */
-    class Entity
-    {
-    public:
-        /**
-         * A unique ID for the entity. These are reused after entities are removed.
-         */
-        int id;
+    typedef uint64_t Entity;
 
-        /**
-         * A set of flags marking what components the entity contains.
-         */
-        std::bitset<ECS_COMPONENT_COUNT> components;
-    };
+    namespace Private
+    {
+        struct InternalEntity
+        {
+            /**
+             * @brief Defines what components are associated with this entity.
+             *
+             */
+            std::bitset<MAX_COMPONENTS> flags;
+        };
+    }
 }

@@ -12,11 +12,21 @@ namespace ECS
         class ComponentBase
         {
             template <typename T> friend class ECS::Component;
+        public:
+            virtual ~ComponentBase() {}
+        protected:
+            /**
+             * @brief Protected constructor. Only inherited classes can be instantiated.
+             *
+             */
+            ComponentBase() {}
         private:
-            static int nextTypeId;
+            /**
+             * @brief Increased for every instantiated type of Component.
+             *
+             */
+            static unsigned int nextTypeId;
         };
-
-        int ComponentBase::nextTypeId = 0;
     }
 
     /**
@@ -30,10 +40,12 @@ namespace ECS
     class Component : public Private::ComponentBase
     {
     public:
+        virtual ~Component() {}
+
         /**
          * @brief Type ID for the component. This is increased automatically for every instantiated type of the class.
          */
-        static const int ID;
+        static const unsigned int ID;
     protected:
         /**
          * @brief Protected constructor. Only inherited classes can be instantiated.
@@ -44,5 +56,5 @@ namespace ECS
 
     // Increase the type ID for every template instantiation of a component.
     template <typename T>
-    const int Component<T>::ID = Private::ComponentBase::nextTypeId++;
+    const unsigned int Component<T>::ID = Private::ComponentBase::nextTypeId++;
 }

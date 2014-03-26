@@ -12,7 +12,7 @@ else()
     set(CMAKE_LXX_FLAGS -m32)
 endif()
 
-add_definitions(-Wall -Werror -std=c++11)
+add_definitions(-Wall -Wconversion -Wextra -Werror -pedantic -std=c++11)
 
 add_subdirectory(ecs)
 add_subdirectory(tests)

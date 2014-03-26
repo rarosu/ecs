@@ -98,105 +98,110 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Manages all entities and components in the world.  
  <a href="class_e_c_s_1_1_entity_manager.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="ecs_8h_source.html">ecs.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="entitymanager_8h_source.html">entitymanager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5029d8ac52b5e171acf9f98d6513e87b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_c_s_1_1_entity.html">Entity</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a5029d8ac52b5e171acf9f98d6513e87b">CreateEntity</a> ()</td></tr>
-<tr class="memdesc:a5029d8ac52b5e171acf9f98d6513e87b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an entity without components.  <a href="#a5029d8ac52b5e171acf9f98d6513e87b">More...</a><br/></td></tr>
-<tr class="separator:a5029d8ac52b5e171acf9f98d6513e87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab469ce55513336256b521a8af38faeca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#ab469ce55513336256b521a8af38faeca">RemoveEntity</a> (<a class="el" href="class_e_c_s_1_1_entity.html">Entity</a> *entity)</td></tr>
-<tr class="memdesc:ab469ce55513336256b521a8af38faeca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks an entity and its components for removal and removes it from all systems.  <a href="#ab469ce55513336256b521a8af38faeca">More...</a><br/></td></tr>
-<tr class="separator:ab469ce55513336256b521a8af38faeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c1d473501404323a532524f6afcbdfb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a4c1d473501404323a532524f6afcbdfb"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a4c1d473501404323a532524f6afcbdfb">AddComponent</a> (<a class="el" href="class_e_c_s_1_1_entity.html">Entity</a> *entity)</td></tr>
-<tr class="memdesc:a4c1d473501404323a532524f6afcbdfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a component and add it to the entity.  <a href="#a4c1d473501404323a532524f6afcbdfb">More...</a><br/></td></tr>
-<tr class="separator:a4c1d473501404323a532524f6afcbdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ffccf0260e106f39192872cf2cd47a0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3ffccf0260e106f39192872cf2cd47a0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a3ffccf0260e106f39192872cf2cd47a0">RemoveComponent</a> (<a class="el" href="class_e_c_s_1_1_entity.html">Entity</a> *entity)</td></tr>
-<tr class="memdesc:a3ffccf0260e106f39192872cf2cd47a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark a component for removal and remove its flag from the entity.  <a href="#a3ffccf0260e106f39192872cf2cd47a0">More...</a><br/></td></tr>
-<tr class="separator:a3ffccf0260e106f39192872cf2cd47a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b65211b0059901010486bcbedd84b96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b65211b0059901010486bcbedd84b96"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>EntityManager</b> (size_t reservedEntityCount=RESERVED_ENTITY_COUNT)</td></tr>
+<tr class="separator:a2b65211b0059901010486bcbedd84b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a521f1a18027231d2895cf91a6b555"><td class="memItemLeft" align="right" valign="top">Entity&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a58a521f1a18027231d2895cf91a6b555">CreateEntity</a> ()</td></tr>
+<tr class="memdesc:a58a521f1a18027231d2895cf91a6b555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an entity without components.  <a href="#a58a521f1a18027231d2895cf91a6b555">More...</a><br/></td></tr>
+<tr class="separator:a58a521f1a18027231d2895cf91a6b555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c584bf9245a3dcbafc1cc5ea93b642"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#ae3c584bf9245a3dcbafc1cc5ea93b642">RemoveEntity</a> (Entity entity)</td></tr>
+<tr class="memdesc:ae3c584bf9245a3dcbafc1cc5ea93b642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks an entity and its components for removal and removes it from all systems.  <a href="#ae3c584bf9245a3dcbafc1cc5ea93b642">More...</a><br/></td></tr>
+<tr class="separator:ae3c584bf9245a3dcbafc1cc5ea93b642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735ab328f07b45342c392fe1f1b6f925"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a735ab328f07b45342c392fe1f1b6f925"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a735ab328f07b45342c392fe1f1b6f925">AddComponent</a> (Entity entity)</td></tr>
+<tr class="memdesc:a735ab328f07b45342c392fe1f1b6f925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a component and add it to the entity.  <a href="#a735ab328f07b45342c392fe1f1b6f925">More...</a><br/></td></tr>
+<tr class="separator:a735ab328f07b45342c392fe1f1b6f925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ee27d400563107f222693fb103c21ed"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7ee27d400563107f222693fb103c21ed"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a7ee27d400563107f222693fb103c21ed">GetComponent</a> (Entity entity)</td></tr>
+<tr class="memdesc:a7ee27d400563107f222693fb103c21ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the component of type T on entity.  <a href="#a7ee27d400563107f222693fb103c21ed">More...</a><br/></td></tr>
+<tr class="separator:a7ee27d400563107f222693fb103c21ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ee8abb53ca6a324496ea839503ac3f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a78ee8abb53ca6a324496ea839503ac3f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a78ee8abb53ca6a324496ea839503ac3f">RemoveComponent</a> (Entity entity)</td></tr>
+<tr class="memdesc:a78ee8abb53ca6a324496ea839503ac3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark a component for removal and remove its flag from the entity.  <a href="#a78ee8abb53ca6a324496ea839503ac3f">More...</a><br/></td></tr>
+<tr class="separator:a78ee8abb53ca6a324496ea839503ac3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages all entities and components in the world. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4c1d473501404323a532524f6afcbdfb"></a>
+<a class="anchor" id="a735ab328f07b45342c392fe1f1b6f925"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* ECS::EntityManager::AddComponent </td>
+          <td class="memname">T * ECS::EntityManager::AddComponent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_e_c_s_1_1_entity.html">Entity</a> *&#160;</td>
+          <td class="paramtype">Entity&#160;</td>
           <td class="paramname"><em>entity</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Create a component and add it to the entity. </p>
-<p>Template type T is the concrete type of the component. </p>
+<p>Template type T is the concrete type of the component.</p>
+<dl class="section return"><dt>Returns</dt><dd>The created component. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a5029d8ac52b5e171acf9f98d6513e87b"></a>
+<a class="anchor" id="a58a521f1a18027231d2895cf91a6b555"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_e_c_s_1_1_entity.html">Entity</a>* ECS::EntityManager::CreateEntity </td>
+          <td class="memname">Entity ECS::EntityManager::CreateEntity </td>
           <td>(</td>
           <td class="paramname">)</td><td></td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Creates an entity without components. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_e_c_s_1_1_entity.html" title="An entity in the world. ">ECS::Entity</a>* </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The created entity. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a3ffccf0260e106f39192872cf2cd47a0"></a>
+<a class="anchor" id="a7ee27d400563107f222693fb103c21ed"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ECS::EntityManager::RemoveComponent </td>
+          <td class="memname">T * ECS::EntityManager::GetComponent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_e_c_s_1_1_entity.html">Entity</a> *&#160;</td>
+          <td class="paramtype">Entity&#160;</td>
           <td class="paramname"><em>entity</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
+</div><div class="memdoc">
+
+<p>Get the component of type T on entity. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_e_c_s_1_1_component.html" title="A component is a collection of data that can be associated with an entity. ">Component</a> or nullptr if no component of type T exists on the entity. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78ee8abb53ca6a324496ea839503ac3f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void ECS::EntityManager::RemoveComponent </td>
+          <td>(</td>
+          <td class="paramtype">Entity&#160;</td>
+          <td class="paramname"><em>entity</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 <p>Mark a component for removal and remove its flag from the entity. </p>
@@ -204,40 +209,33 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ab469ce55513336256b521a8af38faeca"></a>
+<a class="anchor" id="ae3c584bf9245a3dcbafc1cc5ea93b642"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ECS::EntityManager::RemoveEntity </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_e_c_s_1_1_entity.html">Entity</a> *&#160;</td>
+          <td class="paramtype">Entity&#160;</td>
           <td class="paramname"><em>entity</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Marks an entity and its components for removal and removes it from all systems. </p>
-<p>Note that this function does not actually delete the entity and its components. </p>
+<p>This function will remove the entity from the processing list of all systems. It will not recycle or remove its components however; this will be done after the current system is finished processing. </p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>ecs/include/<a class="el" href="ecs_8h_source.html">ecs.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>ecs/include/<a class="el" href="entitymanager_8h_source.html">entitymanager.h</a></li>
+<li>ecs/src/entitymanager.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 21 2014 21:27:14 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 26 2014 12:10:14 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

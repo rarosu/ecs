@@ -3,24 +3,29 @@
 }
 
 
-Processes all entities containing a certain subset of components.  
+An entity system base class.  
 
 
 
 
-{\ttfamily \#include $<$ecs.\-h$>$}
+{\ttfamily \#include $<$system.\-h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_e_c_s_1_1_entity_system_a87a27ddea7fcd58d6c239ca446d2e1d0}{virtual void {\bfseries Process} ()=0}\label{class_e_c_s_1_1_entity_system_a87a27ddea7fcd58d6c239ca446d2e1d0}
+\hypertarget{class_e_c_s_1_1_entity_system_a9f67d3f6c3b997a164665f1a36e19f0d}{void {\bfseries Process} ()}\label{class_e_c_s_1_1_entity_system_a9f67d3f6c3b997a164665f1a36e19f0d}
+
+\item 
+\hypertarget{class_e_c_s_1_1_entity_system_a5f2443358fcbe4ddd7c2bfb46d75cd86}{virtual void {\bfseries Process\-Entity} (Entity entity)=0}\label{class_e_c_s_1_1_entity_system_a5f2443358fcbe4ddd7c2bfb46d75cd86}
 
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Processes all entities containing a certain subset of components. 
+An entity system base class. 
+
+An entity system will process entities that have a list of components that matches the aspect of the system. 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-ecs/include/ecs.\-h\end{DoxyCompactItemize}
+ecs/include/system.\-h\end{DoxyCompactItemize}

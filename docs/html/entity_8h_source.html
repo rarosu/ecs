@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_f94b4cd60f33644e7004e36e0e0d988a.html">ecs</a></li><li class="navelem"><a class="el" href="dir_4edcd0075c5f51f39ed5b6c25670a5b4.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_eafb92770fbc727220bdaa0b1292f771.html">ecs</a></li><li class="navelem"><a class="el" href="dir_c929e14b2572c3fa6571ba0799eed621.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -91,21 +91,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;bitset&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>ECS</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="class_e_c_s_1_1_entity.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_e_c_s_1_1_entity.html" title="An entity in the world. ">Entity</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="class_e_c_s_1_1_entity.html#a96a315e99204b7be2324c4b95be15a82">   19</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_e_c_s_1_1_entity.html#a96a315e99204b7be2324c4b95be15a82">id</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="class_e_c_s_1_1_entity.html#a379c4406de263f9fd2494b52b35666e1">   24</a></span>&#160;        std::bitset&lt;ECS_COMPONENT_COUNT&gt; <a class="code" href="class_e_c_s_1_1_entity.html#a379c4406de263f9fd2494b52b35666e1">components</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;config.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>ECS</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">typedef</span> uint64_t Entity;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">namespace </span>Private</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="struct_e_c_s_1_1_private_1_1_internal_entity.html">   18</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="struct_e_c_s_1_1_private_1_1_internal_entity.html">InternalEntity</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="struct_e_c_s_1_1_private_1_1_internal_entity.html#a5e74b188dffd2aee52d0a4f1259eb140">   24</a></span>&#160;            std::bitset&lt;MAX_COMPONENTS&gt; <a class="code" href="struct_e_c_s_1_1_private_1_1_internal_entity.html#a5e74b188dffd2aee52d0a4f1259eb140" title="Defines what components are associated with this entity. ">flags</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 21 2014 21:27:13 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 26 2014 12:10:13 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

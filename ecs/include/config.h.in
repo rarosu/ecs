@@ -1,0 +1,10 @@
+#pragma once
+
+namespace ECS
+{
+    const int VERSION_MAJOR = @ECS_VERSION_MAJOR@;
+    const int VERSION_MINOR = @ECS_VERSION_MINOR@;
+
+    const int MAX_COMPONENTS = @ECS_MAX_COMPONENTS@;
+    const int RESERVED_ENTITY_COUNT = @ECS_RESERVED_ENTITY_COUNT@;
+}
