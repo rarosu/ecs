@@ -89,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_e_c_s_1_1_system_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ECS::SystemManager Class Reference</div>  </div>
@@ -99,17 +100,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="class_e_c_s_1_1_system_manager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="systemmanager_8h_source.html">systemmanager.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ECS::SystemManager:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_e_c_s_1_1_system_manager.png" usemap="#ECS::SystemManager_map" alt=""/>
+  <map id="ECS::SystemManager_map" name="ECS::SystemManager_map">
+<area href="class_e_c_s_1_1_entity_observer.html" title="Can be inherited from to observe additions/removal of entities and components. " alt="ECS::EntityObserver" shape="rect" coords="0,0,134,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a50bff38d0cf1b0508746f1c63c492553"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_system_manager.html#a50bff38d0cf1b0508746f1c63c492553">SystemManager</a> (<a class="el" href="class_e_c_s_1_1_entity_manager.html">EntityManager</a> *entityManager)</td></tr>
+<tr class="memdesc:a50bff38d0cf1b0508746f1c63c492553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a system manager. Requires access to the entity manager.  <a href="#a50bff38d0cf1b0508746f1c63c492553">More...</a><br/></td></tr>
+<tr class="separator:a50bff38d0cf1b0508746f1c63c492553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13ba9ced2fbe676282e1c43d12d1f3d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13ba9ced2fbe676282e1c43d12d1f3d8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_system_manager.html#a13ba9ced2fbe676282e1c43d12d1f3d8">~SystemManager</a> ()</td></tr>
+<tr class="memdesc:a13ba9ced2fbe676282e1c43d12d1f3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor - will delete all systems. <br/></td></tr>
+<tr class="separator:a13ba9ced2fbe676282e1c43d12d1f3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a429f0b17229926adea3315c736232e7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_system_manager.html#a429f0b17229926adea3315c736232e7d">RegisterSystem</a> (<a class="el" href="class_e_c_s_1_1_entity_system.html">EntitySystem</a> *system)</td></tr>
 <tr class="memdesc:a429f0b17229926adea3315c736232e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a system within the manager.  <a href="#a429f0b17229926adea3315c736232e7d">More...</a><br/></td></tr>
 <tr class="separator:a429f0b17229926adea3315c736232e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a6f579cda6059d102e9074e11a27e0282"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f579cda6059d102e9074e11a27e0282"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>EntityManager</b></td></tr>
+<tr class="separator:a6f579cda6059d102e9074e11a27e0282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Management class for entity systems. </p>
 <p>This manager will keep track of all existing entity systems and update their processing list. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a50bff38d0cf1b0508746f1c63c492553"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ECS::SystemManager::SystemManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_e_c_s_1_1_entity_manager.html">EntityManager</a> *&#160;</td>
+          <td class="paramname"><em>entityManager</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a system manager. Requires access to the entity manager. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entityManager</td><td>The entity manager this system manager should be associated with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a429f0b17229926adea3315c736232e7d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -135,13 +183,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>ecs/include/<a class="el" href="systemmanager_8h_source.html">systemmanager.h</a></li>
+<li>ecs/src/systemmanager.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 26 2014 12:10:14 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 31 2014 14:48:22 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

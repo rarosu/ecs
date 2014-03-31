@@ -1,9 +1,13 @@
 #pragma once
 
+#include <vector>
 #include "system.h"
+#include "entityobserver.h"
 
 namespace ECS
 {
+    class EntityManager;
+
     /**
      * @brief Management class for entity systems.
      *
@@ -11,9 +15,21 @@ namespace ECS
      * their processing list.
      *
      */
-    class SystemManager
+    class SystemManager : private EntityObserver
     {
+        friend class EntityManager;
     public:
+        /**
+         * @brief Create a system manager. Requires access to the entity manager.
+         *
+         * @param entityManager The entity manager this system manager should be associated with.
+         */
+        SystemManager(EntityManager* entityManager);
+
+        /**
+         * @brief Destructor - will delete all systems.
+         *
+         */
         ~SystemManager();
 
         /**
@@ -26,19 +42,68 @@ namespace ECS
         void RegisterSystem(EntitySystem* system);
     private:
         /**
-         * @brief Called when the components on an entity has been changed.
+         * @brief The entity manager this system manager is associated with.
          *
-         * @param entity The entity whose components has changed.
          */
-        void (Entity entity);
+        EntityManager* entityManager;
 
         /**
-         * @brief Called when an entity should be removed from all systems.
+         * @brief The list of systems that should be managed. These are assumed to be heap-allocated and not null.
          *
-         * @param entity The entity that should be removed.
          */
-        void RemoveEntityFromSystems(Entity entity);
-
         std::vector<EntitySystem*> systems;
+
+        /**
+         * @brief An entity has been created. Do nothing.
+         *
+         * @param entity The UUID of the new entity.
+         */
+        void EntityCreated(ECS::Entity entity);
+
+        /**
+         * @brief An entity has been removed. Remove from all systems who process that entity.
+         *
+         * Note that this is called when an entity is removed, not when it is destroyed.
+         *
+         * @param entity The UUID of the removed entity.
+         */
+        void EntityRemoved(ECS::Entity entity);
+
+        /**
+         * @brief A component has been added to an entity. Rematch entity against all system aspects.
+         *
+         * @param entity The UUID of the target entity.
+         * @param componentType The ID of the component type added.
+         */
+        void ComponentAdded(ECS::Entity entity, ECS::ComponentType componentType);
+
+        /**
+         * @brief A component has been removed from an entity. Rematch entity against all system aspects.
+         *
+         * Note that this is called when a component is removed, not when it is destroyed. Also note
+         * that this function is not called when an entity is removed, even though all components are removed
+         * then.
+         *
+         * @param entity The UUID of the target entity.
+         * @param componentType The ID of the component type added.
+         */
+        void ComponentRemoved(ECS::Entity entity, ECS::ComponentType componentType);
+
+        /**
+         * @brief This will add/remove the entity from appropriate systems.
+         *
+         * It will match the components on the given entity against the aspect of all registered systems. If it
+         * matches the aspect, the entity is added, if not, it is removed.
+         *
+         */
+        void RematchEntityForAllSystems(Entity entity);
+
+        /**
+         * @brief This will add or remove the entity to/from the given system.
+         *
+         * @param entity The entity to reconsider
+         * @param system The system which we will compare against
+         */
+        void RematchEntityForSystem(Entity entity, EntitySystem* system);
     };
 }

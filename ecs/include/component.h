@@ -4,6 +4,8 @@ namespace ECS
 {
     template<typename T> class Component;
 
+    typedef unsigned int ComponentType;
+
     namespace Private
     {
         /**
@@ -25,7 +27,7 @@ namespace ECS
              * @brief Increased for every instantiated type of Component.
              *
              */
-            static unsigned int nextTypeId;
+            static ComponentType nextTypeId;
         };
     }
 
@@ -45,7 +47,7 @@ namespace ECS
         /**
          * @brief Type ID for the component. This is increased automatically for every instantiated type of the class.
          */
-        static const unsigned int ID;
+        static const ComponentType ID;
     protected:
         /**
          * @brief Protected constructor. Only inherited classes can be instantiated.
@@ -56,5 +58,5 @@ namespace ECS
 
     // Increase the type ID for every template instantiation of a component.
     template <typename T>
-    const unsigned int Component<T>::ID = Private::ComponentBase::nextTypeId++;
+    const ComponentType Component<T>::ID = Private::ComponentBase::nextTypeId++;
 }

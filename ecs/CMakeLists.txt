@@ -17,6 +17,6 @@ configure_file(
 
 # Setup the executable
 set(HEADERS include/ecs.h include/component.h include/entity.h include/entitymanager.h)
-set(SOURCES src/entitymanager.cpp src/component.cpp)
+set(SOURCES src/system.cpp src/systemmanager.cpp src/entitymanager.cpp src/component.cpp)
 
 add_library(${PROJECT_NAME} SHARED ${HEADERS} ${SOURCES})

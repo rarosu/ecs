@@ -13,10 +13,19 @@ An entity system base class.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_e_c_s_1_1_entity_system_a9f67d3f6c3b997a164665f1a36e19f0d}{void {\bfseries Process} ()}\label{class_e_c_s_1_1_entity_system_a9f67d3f6c3b997a164665f1a36e19f0d}
+\hypertarget{class_e_c_s_1_1_entity_system_a9f67d3f6c3b997a164665f1a36e19f0d}{void \hyperlink{class_e_c_s_1_1_entity_system_a9f67d3f6c3b997a164665f1a36e19f0d}{Process} ()}\label{class_e_c_s_1_1_entity_system_a9f67d3f6c3b997a164665f1a36e19f0d}
 
+\begin{DoxyCompactList}\small\item\em Process all entities matching the set aspect. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_e_c_s_1_1_entity_system_a5f2443358fcbe4ddd7c2bfb46d75cd86}{Process\-Entity} (Entity entity)=0
+\begin{DoxyCompactList}\small\item\em Process one of the entities in our processing list. \end{DoxyCompactList}\item 
+\hypertarget{class_e_c_s_1_1_entity_system_ab5bd1ebaeab36edbe5619110bfb469fd}{const std\-::bitset\\*
+$<$ M\-A\-X\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-S $>$ \& \hyperlink{class_e_c_s_1_1_entity_system_ab5bd1ebaeab36edbe5619110bfb469fd}{Get\-Aspect} () const }\label{class_e_c_s_1_1_entity_system_ab5bd1ebaeab36edbe5619110bfb469fd}
+
+\begin{DoxyCompactList}\small\item\em Get the aspect of the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_e_c_s_1_1_entity_system_a5f2443358fcbe4ddd7c2bfb46d75cd86}{virtual void {\bfseries Process\-Entity} (Entity entity)=0}\label{class_e_c_s_1_1_entity_system_a5f2443358fcbe4ddd7c2bfb46d75cd86}
+\hypertarget{class_e_c_s_1_1_entity_system_ab1ef2aa9992dd8ae85793e1a1f980e1e}{class {\bfseries System\-Manager}}\label{class_e_c_s_1_1_entity_system_ab1ef2aa9992dd8ae85793e1a1f980e1e}
 
 \end{DoxyCompactItemize}
 
@@ -24,8 +33,32 @@ An entity system base class.
 \subsection{Detailed Description}
 An entity system base class. 
 
-An entity system will process entities that have a list of components that matches the aspect of the system. 
+An entity system will process entities that have a list of components that matches the aspect of the system.
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+To start using a system, it has to be added to a \hyperlink{class_e_c_s_1_1_system_manager}{System\-Manager} that is associated to an \hyperlink{class_e_c_s_1_1_entity_manager}{Entity\-Manager}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_e_c_s_1_1_entity_system_a5f2443358fcbe4ddd7c2bfb46d75cd86}{\index{E\-C\-S\-::\-Entity\-System@{E\-C\-S\-::\-Entity\-System}!Process\-Entity@{Process\-Entity}}
+\index{Process\-Entity@{Process\-Entity}!ECS::EntitySystem@{E\-C\-S\-::\-Entity\-System}}
+\subsubsection[{Process\-Entity}]{\setlength{\rightskip}{0pt plus 5cm}virtual void E\-C\-S\-::\-Entity\-System\-::\-Process\-Entity (
+\begin{DoxyParamCaption}
+\item[{Entity}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_e_c_s_1_1_entity_system_a5f2443358fcbe4ddd7c2bfb46d75cd86}
+
+
+Process one of the entities in our processing list. 
+
+This function is called for every entity matching our aspect when Process is called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to process. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-ecs/include/system.\-h\end{DoxyCompactItemize}
+ecs/include/system.\-h\item 
+ecs/src/system.\-cpp\end{DoxyCompactItemize}

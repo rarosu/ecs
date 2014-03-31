@@ -4,6 +4,20 @@ namespace ECS
 {
     const std::bitset<MAX_COMPONENTS> EntityManager::ZERO_BITSET;
 
+
+    EntityManager::ComponentReference::ComponentReference(size_t internalEntityId, ComponentType componentType)
+    {
+        this->internalEntityId = internalEntityId;
+        this->componentType = componentType;
+    }
+
+    bool EntityManager::ComponentReference::operator==(const ComponentReference& rhs) const
+    {
+        return internalEntityId == rhs.internalEntityId &&
+               componentType == rhs.componentType;
+    }
+
+
     EntityManager::EntityManager(size_t reservedEntityCount)
     {
         nextUUID = 0;
@@ -12,6 +26,18 @@ namespace ECS
         entities.reserve(reservedEntityCount);
         for (size_t i = 0; i < MAX_COMPONENTS; ++i)
             components[i].reserve(reservedEntityCount);
+    }
+
+    EntityManager::~EntityManager()
+    {
+        // TODO: Use custom deallocator.
+        for (size_t i = 0; i < MAX_COMPONENTS; ++i)
+        {
+            for (size_t k = 0; k < entities.size(); ++k)
+            {
+                delete components[i][k];
+            }
+        }
     }
 
     Entity EntityManager::CreateEntity()
@@ -34,6 +60,12 @@ namespace ECS
         }
 
         translator[entity] = internalId;
+        activeEntities.insert(entity);
+
+        // Notify all observers of the created entity.
+        for (auto observer : observers)
+            observer->EntityCreated(entity);
+
         return entity;
     }
 
@@ -49,6 +81,10 @@ namespace ECS
 
         entitiesToDestroy.push_back(internalId);
         entities[internalId].flags.reset();
+        activeEntities.erase(entity);
+
+        for (auto observer : observers)
+            observer->EntityRemoved(entity);
     }
 
     bool EntityManager::IsRemoved(Entity entity)
@@ -71,6 +107,11 @@ namespace ECS
         return translator.find(entity) == translator.end();
     }
 
+    const std::set<Entity>& EntityManager::GetActiveEntities() const
+    {
+        return activeEntities;
+    }
+
     const std::bitset<MAX_COMPONENTS>& EntityManager::GetEntityFlag(Entity entity)
     {
         auto it = translator.find(entity);
@@ -88,8 +129,10 @@ namespace ECS
         // TODO: Use custom deallocator instead of delete
 
         // Destroy all removed entities.
-        for (size_t internalId : entitiesToDestroy)
+        for (Entity entity : entitiesToDestroy)
         {
+            size_t internalId = translator.find(entity)->second;
+
             // Destroy all components associated with the entity.
             for (size_t i = 0; i < MAX_COMPONENTS; ++i)
             {
@@ -97,18 +140,32 @@ namespace ECS
                 components[i][internalId] = nullptr;
             }
 
-            // Reset the component flag
-            entities[internalId].flags = 0;
-
-            // Recycle the ID
+            // Reset and recycle
+            entities[internalId].flags.reset();
+            translator.erase(entity);
             recycledIds.push_back(internalId);
         }
 
         // Destroy all removed components.
         for (auto componentKey : componentsToDestroy)
         {
-            delete components[componentKey.second][componentKey.first];
-            components[componentKey.second][componentKey.first] = nullptr;
+            delete components[componentKey.componentType][componentKey.internalEntityId];
+            components[componentKey.componentType][componentKey.internalEntityId] = nullptr;
         }
+    }
+
+    void EntityManager::AddEntityObserver(EntityObserver* observer)
+    {
+        observers.insert(observer);
+    }
+
+    void EntityManager::RemoveEntityObserver(EntityObserver* observer)
+    {
+        observers.erase(observer);
+    }
+
+    bool EntityManager::IsObserving(EntityObserver* observer)
+    {
+        return observers.find(observer) != observers.end();
     }
 }

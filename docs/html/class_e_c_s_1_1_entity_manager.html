@@ -88,6 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_e_c_s_1_1_entity_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -102,15 +103,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b65211b0059901010486bcbedd84b96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b65211b0059901010486bcbedd84b96"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EntityManager</b> (size_t reservedEntityCount=RESERVED_ENTITY_COUNT)</td></tr>
+<tr class="memitem:a2b65211b0059901010486bcbedd84b96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a2b65211b0059901010486bcbedd84b96">EntityManager</a> (size_t reservedEntityCount=RESERVED_ENTITY_COUNT)</td></tr>
+<tr class="memdesc:a2b65211b0059901010486bcbedd84b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. Set default values and reserve memory.  <a href="#a2b65211b0059901010486bcbedd84b96">More...</a><br/></td></tr>
 <tr class="separator:a2b65211b0059901010486bcbedd84b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d437a2a93cd3fc54eb1172848be95c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15d437a2a93cd3fc54eb1172848be95c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a15d437a2a93cd3fc54eb1172848be95c">~EntityManager</a> ()</td></tr>
+<tr class="memdesc:a15d437a2a93cd3fc54eb1172848be95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. Deallocates all components. <br/></td></tr>
+<tr class="separator:a15d437a2a93cd3fc54eb1172848be95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58a521f1a18027231d2895cf91a6b555"><td class="memItemLeft" align="right" valign="top">Entity&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a58a521f1a18027231d2895cf91a6b555">CreateEntity</a> ()</td></tr>
 <tr class="memdesc:a58a521f1a18027231d2895cf91a6b555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an entity without components.  <a href="#a58a521f1a18027231d2895cf91a6b555">More...</a><br/></td></tr>
 <tr class="separator:a58a521f1a18027231d2895cf91a6b555"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3c584bf9245a3dcbafc1cc5ea93b642"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#ae3c584bf9245a3dcbafc1cc5ea93b642">RemoveEntity</a> (Entity entity)</td></tr>
 <tr class="memdesc:ae3c584bf9245a3dcbafc1cc5ea93b642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks an entity and its components for removal and removes it from all systems.  <a href="#ae3c584bf9245a3dcbafc1cc5ea93b642">More...</a><br/></td></tr>
 <tr class="separator:ae3c584bf9245a3dcbafc1cc5ea93b642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba46f10add91879ffd7ff4e31861d73d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#aba46f10add91879ffd7ff4e31861d73d">IsRemoved</a> (Entity entity)</td></tr>
+<tr class="memdesc:aba46f10add91879ffd7ff4e31861d73d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if an entity has been removed or destroyed.  <a href="#aba46f10add91879ffd7ff4e31861d73d">More...</a><br/></td></tr>
+<tr class="separator:aba46f10add91879ffd7ff4e31861d73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada6b7ca459e79078d043c109246dcb0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#ada6b7ca459e79078d043c109246dcb0b">IsDestroyed</a> (Entity entity)</td></tr>
+<tr class="memdesc:ada6b7ca459e79078d043c109246dcb0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if an entity has been destroyed.  <a href="#ada6b7ca459e79078d043c109246dcb0b">More...</a><br/></td></tr>
+<tr class="separator:ada6b7ca459e79078d043c109246dcb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a382763effb53c305ec89bc3937a48de5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a382763effb53c305ec89bc3937a48de5"></a>
+const std::set&lt; Entity &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a382763effb53c305ec89bc3937a48de5">GetActiveEntities</a> () const </td></tr>
+<tr class="memdesc:a382763effb53c305ec89bc3937a48de5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the entities that have been created but not removed. <br/></td></tr>
+<tr class="separator:a382763effb53c305ec89bc3937a48de5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e073bee7f9210e6e13ad7373d9700f"><td class="memItemLeft" align="right" valign="top">const std::bitset<br class="typebreak"/>
+&lt; MAX_COMPONENTS &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a99e073bee7f9210e6e13ad7373d9700f">GetEntityFlag</a> (Entity entity)</td></tr>
+<tr class="memdesc:a99e073bee7f9210e6e13ad7373d9700f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a bitset determining what components this entity has.  <a href="#a99e073bee7f9210e6e13ad7373d9700f">More...</a><br/></td></tr>
+<tr class="separator:a99e073bee7f9210e6e13ad7373d9700f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a735ab328f07b45342c392fe1f1b6f925"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a735ab328f07b45342c392fe1f1b6f925"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a735ab328f07b45342c392fe1f1b6f925">AddComponent</a> (Entity entity)</td></tr>
 <tr class="memdesc:a735ab328f07b45342c392fe1f1b6f925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a component and add it to the entity.  <a href="#a735ab328f07b45342c392fe1f1b6f925">More...</a><br/></td></tr>
@@ -123,10 +142,58 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a78ee8abb53ca6a324496ea839503ac3f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a78ee8abb53ca6a324496ea839503ac3f">RemoveComponent</a> (Entity entity)</td></tr>
 <tr class="memdesc:a78ee8abb53ca6a324496ea839503ac3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark a component for removal and remove its flag from the entity.  <a href="#a78ee8abb53ca6a324496ea839503ac3f">More...</a><br/></td></tr>
 <tr class="separator:a78ee8abb53ca6a324496ea839503ac3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d62c8ffa5a48a7c56b32b40e8ed3b8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a15d62c8ffa5a48a7c56b32b40e8ed3b8"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a15d62c8ffa5a48a7c56b32b40e8ed3b8">HasComponent</a> (Entity entity) const </td></tr>
+<tr class="memdesc:a15d62c8ffa5a48a7c56b32b40e8ed3b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the entity has a component.  <a href="#a15d62c8ffa5a48a7c56b32b40e8ed3b8">More...</a><br/></td></tr>
+<tr class="separator:a15d62c8ffa5a48a7c56b32b40e8ed3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a29fef50eb575545e5bcf0be5c5231"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a97a29fef50eb575545e5bcf0be5c5231"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a97a29fef50eb575545e5bcf0be5c5231">IsComponentRemoved</a> (Entity entity) const </td></tr>
+<tr class="memdesc:a97a29fef50eb575545e5bcf0be5c5231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the entity has a component that is removed (but not destroyed yet).  <a href="#a97a29fef50eb575545e5bcf0be5c5231">More...</a><br/></td></tr>
+<tr class="separator:a97a29fef50eb575545e5bcf0be5c5231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202e0fb0a88c6eb742efbdb77e38a07a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a202e0fb0a88c6eb742efbdb77e38a07a">DestroyRemoved</a> ()</td></tr>
+<tr class="memdesc:a202e0fb0a88c6eb742efbdb77e38a07a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This will destroy all removed entities and components.  <a href="#a202e0fb0a88c6eb742efbdb77e38a07a">More...</a><br/></td></tr>
+<tr class="separator:a202e0fb0a88c6eb742efbdb77e38a07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3af21bc0c93a38787e3bbd165684b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e3af21bc0c93a38787e3bbd165684b2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a4e3af21bc0c93a38787e3bbd165684b2">AddEntityObserver</a> (<a class="el" href="class_e_c_s_1_1_entity_observer.html">EntityObserver</a> *observer)</td></tr>
+<tr class="memdesc:a4e3af21bc0c93a38787e3bbd165684b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an entity observer. <br/></td></tr>
+<tr class="separator:a4e3af21bc0c93a38787e3bbd165684b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03c47ba6943d80e5b95341036273215f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03c47ba6943d80e5b95341036273215f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a03c47ba6943d80e5b95341036273215f">RemoveEntityObserver</a> (<a class="el" href="class_e_c_s_1_1_entity_observer.html">EntityObserver</a> *observer)</td></tr>
+<tr class="memdesc:a03c47ba6943d80e5b95341036273215f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an entity observer. This should be done if an added observer is deleted. <br/></td></tr>
+<tr class="separator:a03c47ba6943d80e5b95341036273215f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47ac42609da24397e38a736a790b8b81"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47ac42609da24397e38a736a790b8b81"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_c_s_1_1_entity_manager.html#a47ac42609da24397e38a736a790b8b81">IsObserving</a> (<a class="el" href="class_e_c_s_1_1_entity_observer.html">EntityObserver</a> *observer)</td></tr>
+<tr class="memdesc:a47ac42609da24397e38a736a790b8b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">See if an entity observer is added to this entity manager. <br/></td></tr>
+<tr class="separator:a47ac42609da24397e38a736a790b8b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages all entities and components in the world. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a2b65211b0059901010486bcbedd84b96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ECS::EntityManager::EntityManager </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>reservedEntityCount</em> = <code>RESERVED_ENTITY_COUNT</code>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. Set default values and reserve memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reservedEntityCount</td><td>How many entities to reserve memory for to start with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a735ab328f07b45342c392fe1f1b6f925"></a>
 <div class="memitem">
 <div class="memproto">
@@ -167,6 +234,24 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a202e0fb0a88c6eb742efbdb77e38a07a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ECS::EntityManager::DestroyRemoved </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This will destroy all removed entities and components. </p>
+<p>This is called on automatically whenever a system has finished processing. </p>
+
+</div>
+</div>
 <a class="anchor" id="a7ee27d400563107f222693fb103c21ed"></a>
 <div class="memitem">
 <div class="memproto">
@@ -185,6 +270,112 @@ template&lt;typename T &gt; </div>
 
 <p>Get the component of type T on entity. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_e_c_s_1_1_component.html" title="A component is a collection of data that can be associated with an entity. ">Component</a> or nullptr if no component of type T exists on the entity. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a99e073bee7f9210e6e13ad7373d9700f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::bitset&lt; MAX_COMPONENTS &gt; &amp; ECS::EntityManager::GetEntityFlag </td>
+          <td>(</td>
+          <td class="paramtype">Entity&#160;</td>
+          <td class="paramname"><em>entity</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a bitset determining what components this entity has. </p>
+<p>The component type ID can be used to index into the bitset and see whether that particular component is associated with this entity.</p>
+<p>Deleted and removed entities always return an empty bitset. Removed components has a zero on its index.</p>
+<dl class="section return"><dt>Returns</dt><dd>The component flags associated with this entity. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a15d62c8ffa5a48a7c56b32b40e8ed3b8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ECS::EntityManager::HasComponent </td>
+          <td>(</td>
+          <td class="paramtype">Entity&#160;</td>
+          <td class="paramname"><em>entity</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the entity has a component. </p>
+<p>Template type T is the concrete type of the component.</p>
+<p>This function will return true if the component has been removed but not destroyed yet. </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_e_c_s_1_1_entity_manager.html#a97a29fef50eb575545e5bcf0be5c5231" title="Check if the entity has a component that is removed (but not destroyed yet). ">IsComponentRemoved</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the entity has the component specified by T (even if removed but not destroyed). False otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a97a29fef50eb575545e5bcf0be5c5231"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ECS::EntityManager::IsComponentRemoved </td>
+          <td>(</td>
+          <td class="paramtype">Entity&#160;</td>
+          <td class="paramname"><em>entity</em>)</td><td></td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the entity has a component that is removed (but not destroyed yet). </p>
+<p>Removed components are not destroyed until a system has finished processing. This function checks if the entity has a component that has been removed but not destroyed yet.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if the component exists on the entity but is in the componentsToDestroy list. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ada6b7ca459e79078d043c109246dcb0b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ECS::EntityManager::IsDestroyed </td>
+          <td>(</td>
+          <td class="paramtype">Entity&#160;</td>
+          <td class="paramname"><em>entity</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if an entity has been destroyed. </p>
+<p>Note that this function will not return true if the entity is in the entitiesToDestroy list.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if the entity has been destroyed, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aba46f10add91879ffd7ff4e31861d73d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ECS::EntityManager::IsRemoved </td>
+          <td>(</td>
+          <td class="paramtype">Entity&#160;</td>
+          <td class="paramname"><em>entity</em>)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if an entity has been removed or destroyed. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the entity has been destroyed or is in the entitiesToDestroy list. </dd></dl>
 
 </div>
 </div>
@@ -235,7 +426,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 26 2014 12:10:14 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 31 2014 14:48:22 for ECS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

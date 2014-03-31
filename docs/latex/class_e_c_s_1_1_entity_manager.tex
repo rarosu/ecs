@@ -13,23 +13,69 @@ Manages all entities and components in the world.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_e_c_s_1_1_entity_manager_a2b65211b0059901010486bcbedd84b96}{{\bfseries Entity\-Manager} (size\-\_\-t reserved\-Entity\-Count=R\-E\-S\-E\-R\-V\-E\-D\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-C\-O\-U\-N\-T)}\label{class_e_c_s_1_1_entity_manager_a2b65211b0059901010486bcbedd84b96}
+\hyperlink{class_e_c_s_1_1_entity_manager_a2b65211b0059901010486bcbedd84b96}{Entity\-Manager} (size\-\_\-t reserved\-Entity\-Count=R\-E\-S\-E\-R\-V\-E\-D\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-C\-O\-U\-N\-T)
+\begin{DoxyCompactList}\small\item\em Constructor. Set default values and reserve memory. \end{DoxyCompactList}\item 
+\hypertarget{class_e_c_s_1_1_entity_manager_a15d437a2a93cd3fc54eb1172848be95c}{\hyperlink{class_e_c_s_1_1_entity_manager_a15d437a2a93cd3fc54eb1172848be95c}{$\sim$\-Entity\-Manager} ()}\label{class_e_c_s_1_1_entity_manager_a15d437a2a93cd3fc54eb1172848be95c}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. Deallocates all components. \end{DoxyCompactList}\item 
 Entity \hyperlink{class_e_c_s_1_1_entity_manager_a58a521f1a18027231d2895cf91a6b555}{Create\-Entity} ()
 \begin{DoxyCompactList}\small\item\em Creates an entity without components. \end{DoxyCompactList}\item 
 void \hyperlink{class_e_c_s_1_1_entity_manager_ae3c584bf9245a3dcbafc1cc5ea93b642}{Remove\-Entity} (Entity entity)
 \begin{DoxyCompactList}\small\item\em Marks an entity and its components for removal and removes it from all systems. \end{DoxyCompactList}\item 
+bool \hyperlink{class_e_c_s_1_1_entity_manager_aba46f10add91879ffd7ff4e31861d73d}{Is\-Removed} (Entity entity)
+\begin{DoxyCompactList}\small\item\em Check if an entity has been removed or destroyed. \end{DoxyCompactList}\item 
+bool \hyperlink{class_e_c_s_1_1_entity_manager_ada6b7ca459e79078d043c109246dcb0b}{Is\-Destroyed} (Entity entity)
+\begin{DoxyCompactList}\small\item\em Check if an entity has been destroyed. \end{DoxyCompactList}\item 
+\hypertarget{class_e_c_s_1_1_entity_manager_a382763effb53c305ec89bc3937a48de5}{const std\-::set$<$ Entity $>$ \& \hyperlink{class_e_c_s_1_1_entity_manager_a382763effb53c305ec89bc3937a48de5}{Get\-Active\-Entities} () const }\label{class_e_c_s_1_1_entity_manager_a382763effb53c305ec89bc3937a48de5}
+
+\begin{DoxyCompactList}\small\item\em Get the entities that have been created but not removed. \end{DoxyCompactList}\item 
+const std\-::bitset\\*
+$<$ M\-A\-X\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-S $>$ \& \hyperlink{class_e_c_s_1_1_entity_manager_a99e073bee7f9210e6e13ad7373d9700f}{Get\-Entity\-Flag} (Entity entity)
+\begin{DoxyCompactList}\small\item\em Get a bitset determining what components this entity has. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{class_e_c_s_1_1_entity_manager_a735ab328f07b45342c392fe1f1b6f925}{Add\-Component} (Entity entity)
 \begin{DoxyCompactList}\small\item\em Create a component and add it to the entity. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{class_e_c_s_1_1_entity_manager_a7ee27d400563107f222693fb103c21ed}{Get\-Component} (Entity entity)
 \begin{DoxyCompactList}\small\item\em Get the component of type T on entity. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\void \hyperlink{class_e_c_s_1_1_entity_manager_a78ee8abb53ca6a324496ea839503ac3f}{Remove\-Component} (Entity entity)
-\begin{DoxyCompactList}\small\item\em Mark a component for removal and remove its flag from the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Mark a component for removal and remove its flag from the entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \hyperlink{class_e_c_s_1_1_entity_manager_a15d62c8ffa5a48a7c56b32b40e8ed3b8}{Has\-Component} (Entity entity) const 
+\begin{DoxyCompactList}\small\item\em Check if the entity has a component. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \hyperlink{class_e_c_s_1_1_entity_manager_a97a29fef50eb575545e5bcf0be5c5231}{Is\-Component\-Removed} (Entity entity) const 
+\begin{DoxyCompactList}\small\item\em Check if the entity has a component that is removed (but not destroyed yet). \end{DoxyCompactList}\item 
+void \hyperlink{class_e_c_s_1_1_entity_manager_a202e0fb0a88c6eb742efbdb77e38a07a}{Destroy\-Removed} ()
+\begin{DoxyCompactList}\small\item\em This will destroy all removed entities and components. \end{DoxyCompactList}\item 
+\hypertarget{class_e_c_s_1_1_entity_manager_a4e3af21bc0c93a38787e3bbd165684b2}{void \hyperlink{class_e_c_s_1_1_entity_manager_a4e3af21bc0c93a38787e3bbd165684b2}{Add\-Entity\-Observer} (\hyperlink{class_e_c_s_1_1_entity_observer}{Entity\-Observer} $\ast$observer)}\label{class_e_c_s_1_1_entity_manager_a4e3af21bc0c93a38787e3bbd165684b2}
+
+\begin{DoxyCompactList}\small\item\em Add an entity observer. \end{DoxyCompactList}\item 
+\hypertarget{class_e_c_s_1_1_entity_manager_a03c47ba6943d80e5b95341036273215f}{void \hyperlink{class_e_c_s_1_1_entity_manager_a03c47ba6943d80e5b95341036273215f}{Remove\-Entity\-Observer} (\hyperlink{class_e_c_s_1_1_entity_observer}{Entity\-Observer} $\ast$observer)}\label{class_e_c_s_1_1_entity_manager_a03c47ba6943d80e5b95341036273215f}
+
+\begin{DoxyCompactList}\small\item\em Remove an entity observer. This should be done if an added observer is deleted. \end{DoxyCompactList}\item 
+\hypertarget{class_e_c_s_1_1_entity_manager_a47ac42609da24397e38a736a790b8b81}{bool \hyperlink{class_e_c_s_1_1_entity_manager_a47ac42609da24397e38a736a790b8b81}{Is\-Observing} (\hyperlink{class_e_c_s_1_1_entity_observer}{Entity\-Observer} $\ast$observer)}\label{class_e_c_s_1_1_entity_manager_a47ac42609da24397e38a736a790b8b81}
+
+\begin{DoxyCompactList}\small\item\em See if an entity observer is added to this entity manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Manages all entities and components in the world. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_e_c_s_1_1_entity_manager_a2b65211b0059901010486bcbedd84b96}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Entity\-Manager@{Entity\-Manager}}
+\index{Entity\-Manager@{Entity\-Manager}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
+\subsubsection[{Entity\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}E\-C\-S\-::\-Entity\-Manager\-::\-Entity\-Manager (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{reserved\-Entity\-Count = {\ttfamily RESERVED\-\_\-ENTITY\-\_\-COUNT}}
+\end{DoxyParamCaption}
+)}}\label{class_e_c_s_1_1_entity_manager_a2b65211b0059901010486bcbedd84b96}
+
+
+Constructor. Set default values and reserve memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reserved\-Entity\-Count} & How many entities to reserve memory for to start with. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \hypertarget{class_e_c_s_1_1_entity_manager_a735ab328f07b45342c392fe1f1b6f925}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Add\-Component@{Add\-Component}}
@@ -62,7 +108,18 @@ Creates an entity without components.
 \begin{DoxyReturn}{Returns}
 The created entity. 
 \end{DoxyReturn}
-\hypertarget{class_e_c_s_1_1_entity_manager_a7ee27d400563107f222693fb103c21ed}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Get\-Component@{Get\-Component}}
+\hypertarget{class_e_c_s_1_1_entity_manager_a202e0fb0a88c6eb742efbdb77e38a07a}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Destroy\-Removed@{Destroy\-Removed}}
+\index{Destroy\-Removed@{Destroy\-Removed}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
+\subsubsection[{Destroy\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}void E\-C\-S\-::\-Entity\-Manager\-::\-Destroy\-Removed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_e_c_s_1_1_entity_manager_a202e0fb0a88c6eb742efbdb77e38a07a}
+
+
+This will destroy all removed entities and components. 
+
+This is called on automatically whenever a system has finished processing. \hypertarget{class_e_c_s_1_1_entity_manager_a7ee27d400563107f222693fb103c21ed}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Get\-Component@{Get\-Component}}
 \index{Get\-Component@{Get\-Component}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
 \subsubsection[{Get\-Component}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ E\-C\-S\-::\-Entity\-Manager\-::\-Get\-Component (
 \begin{DoxyParamCaption}
@@ -75,6 +132,89 @@ Get the component of type T on entity.
 
 \begin{DoxyReturn}{Returns}
 \hyperlink{class_e_c_s_1_1_component}{Component} or nullptr if no component of type T exists on the entity. 
+\end{DoxyReturn}
+\hypertarget{class_e_c_s_1_1_entity_manager_a99e073bee7f9210e6e13ad7373d9700f}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Get\-Entity\-Flag@{Get\-Entity\-Flag}}
+\index{Get\-Entity\-Flag@{Get\-Entity\-Flag}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
+\subsubsection[{Get\-Entity\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::bitset$<$ M\-A\-X\-\_\-\-C\-O\-M\-P\-O\-N\-E\-N\-T\-S $>$ \& E\-C\-S\-::\-Entity\-Manager\-::\-Get\-Entity\-Flag (
+\begin{DoxyParamCaption}
+\item[{Entity}]{entity}
+\end{DoxyParamCaption}
+)}}\label{class_e_c_s_1_1_entity_manager_a99e073bee7f9210e6e13ad7373d9700f}
+
+
+Get a bitset determining what components this entity has. 
+
+The component type I\-D can be used to index into the bitset and see whether that particular component is associated with this entity.
+
+Deleted and removed entities always return an empty bitset. Removed components has a zero on its index.
+
+\begin{DoxyReturn}{Returns}
+The component flags associated with this entity. 
+\end{DoxyReturn}
+\hypertarget{class_e_c_s_1_1_entity_manager_a15d62c8ffa5a48a7c56b32b40e8ed3b8}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Has\-Component@{Has\-Component}}
+\index{Has\-Component@{Has\-Component}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
+\subsubsection[{Has\-Component}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool E\-C\-S\-::\-Entity\-Manager\-::\-Has\-Component (
+\begin{DoxyParamCaption}
+\item[{Entity}]{entity}
+\end{DoxyParamCaption}
+) const}}\label{class_e_c_s_1_1_entity_manager_a15d62c8ffa5a48a7c56b32b40e8ed3b8}
+
+
+Check if the entity has a component. 
+
+Template type T is the concrete type of the component.
+
+This function will return true if the component has been removed but not destroyed yet. \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_e_c_s_1_1_entity_manager_a97a29fef50eb575545e5bcf0be5c5231}{Is\-Component\-Removed}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+True if the entity has the component specified by T (even if removed but not destroyed). False otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_e_c_s_1_1_entity_manager_a97a29fef50eb575545e5bcf0be5c5231}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Is\-Component\-Removed@{Is\-Component\-Removed}}
+\index{Is\-Component\-Removed@{Is\-Component\-Removed}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
+\subsubsection[{Is\-Component\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool E\-C\-S\-::\-Entity\-Manager\-::\-Is\-Component\-Removed (
+\begin{DoxyParamCaption}
+\item[{Entity}]{entity}
+\end{DoxyParamCaption}
+) const}}\label{class_e_c_s_1_1_entity_manager_a97a29fef50eb575545e5bcf0be5c5231}
+
+
+Check if the entity has a component that is removed (but not destroyed yet). 
+
+Removed components are not destroyed until a system has finished processing. This function checks if the entity has a component that has been removed but not destroyed yet.
+
+\begin{DoxyReturn}{Returns}
+True if the component exists on the entity but is in the components\-To\-Destroy list. 
+\end{DoxyReturn}
+\hypertarget{class_e_c_s_1_1_entity_manager_ada6b7ca459e79078d043c109246dcb0b}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Is\-Destroyed@{Is\-Destroyed}}
+\index{Is\-Destroyed@{Is\-Destroyed}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
+\subsubsection[{Is\-Destroyed}]{\setlength{\rightskip}{0pt plus 5cm}bool E\-C\-S\-::\-Entity\-Manager\-::\-Is\-Destroyed (
+\begin{DoxyParamCaption}
+\item[{Entity}]{entity}
+\end{DoxyParamCaption}
+)}}\label{class_e_c_s_1_1_entity_manager_ada6b7ca459e79078d043c109246dcb0b}
+
+
+Check if an entity has been destroyed. 
+
+Note that this function will not return true if the entity is in the entities\-To\-Destroy list.
+
+\begin{DoxyReturn}{Returns}
+True if the entity has been destroyed, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{class_e_c_s_1_1_entity_manager_aba46f10add91879ffd7ff4e31861d73d}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Is\-Removed@{Is\-Removed}}
+\index{Is\-Removed@{Is\-Removed}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}
+\subsubsection[{Is\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}bool E\-C\-S\-::\-Entity\-Manager\-::\-Is\-Removed (
+\begin{DoxyParamCaption}
+\item[{Entity}]{entity}
+\end{DoxyParamCaption}
+)}}\label{class_e_c_s_1_1_entity_manager_aba46f10add91879ffd7ff4e31861d73d}
+
+
+Check if an entity has been removed or destroyed. 
+
+\begin{DoxyReturn}{Returns}
+True if the entity has been destroyed or is in the entities\-To\-Destroy list. 
 \end{DoxyReturn}
 \hypertarget{class_e_c_s_1_1_entity_manager_a78ee8abb53ca6a324496ea839503ac3f}{\index{E\-C\-S\-::\-Entity\-Manager@{E\-C\-S\-::\-Entity\-Manager}!Remove\-Component@{Remove\-Component}}
 \index{Remove\-Component@{Remove\-Component}!ECS::EntityManager@{E\-C\-S\-::\-Entity\-Manager}}

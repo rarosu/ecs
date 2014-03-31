@@ -10,17 +10,53 @@ Management class for entity systems.
 
 {\ttfamily \#include $<$systemmanager.\-h$>$}
 
+Inheritance diagram for E\-C\-S\-:\-:System\-Manager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_e_c_s_1_1_system_manager}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{class_e_c_s_1_1_system_manager_a50bff38d0cf1b0508746f1c63c492553}{System\-Manager} (\hyperlink{class_e_c_s_1_1_entity_manager}{Entity\-Manager} $\ast$entity\-Manager)
+\begin{DoxyCompactList}\small\item\em Create a system manager. Requires access to the entity manager. \end{DoxyCompactList}\item 
+\hypertarget{class_e_c_s_1_1_system_manager_a13ba9ced2fbe676282e1c43d12d1f3d8}{\hyperlink{class_e_c_s_1_1_system_manager_a13ba9ced2fbe676282e1c43d12d1f3d8}{$\sim$\-System\-Manager} ()}\label{class_e_c_s_1_1_system_manager_a13ba9ced2fbe676282e1c43d12d1f3d8}
+
+\begin{DoxyCompactList}\small\item\em Destructor -\/ will delete all systems. \end{DoxyCompactList}\item 
 void \hyperlink{class_e_c_s_1_1_system_manager_a429f0b17229926adea3315c736232e7d}{Register\-System} (\hyperlink{class_e_c_s_1_1_entity_system}{Entity\-System} $\ast$system)
 \begin{DoxyCompactList}\small\item\em Registers a system within the manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_e_c_s_1_1_system_manager_a6f579cda6059d102e9074e11a27e0282}{class {\bfseries Entity\-Manager}}\label{class_e_c_s_1_1_system_manager_a6f579cda6059d102e9074e11a27e0282}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Management class for entity systems. 
 
 This manager will keep track of all existing entity systems and update their processing list. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_e_c_s_1_1_system_manager_a50bff38d0cf1b0508746f1c63c492553}{\index{E\-C\-S\-::\-System\-Manager@{E\-C\-S\-::\-System\-Manager}!System\-Manager@{System\-Manager}}
+\index{System\-Manager@{System\-Manager}!ECS::SystemManager@{E\-C\-S\-::\-System\-Manager}}
+\subsubsection[{System\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}E\-C\-S\-::\-System\-Manager\-::\-System\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Entity\-Manager} $\ast$}]{entity\-Manager}
+\end{DoxyParamCaption}
+)}}\label{class_e_c_s_1_1_system_manager_a50bff38d0cf1b0508746f1c63c492553}
+
+
+Create a system manager. Requires access to the entity manager. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\-Manager} & The entity manager this system manager should be associated with. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
 \hypertarget{class_e_c_s_1_1_system_manager_a429f0b17229926adea3315c736232e7d}{\index{E\-C\-S\-::\-System\-Manager@{E\-C\-S\-::\-System\-Manager}!Register\-System@{Register\-System}}
@@ -43,6 +79,7 @@ This will transfer control of the system from the user to the manager. The manag
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-ecs/include/systemmanager.\-h\end{DoxyCompactItemize}
+ecs/include/systemmanager.\-h\item 
+ecs/src/systemmanager.\-cpp\end{DoxyCompactItemize}

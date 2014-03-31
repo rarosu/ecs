@@ -3,10 +3,12 @@
 #include <cassert>
 #include <vector>
 #include <map>
+#include <set>
 #include <algorithm>
 #include "config.h"
 #include "entity.h"
 #include "component.h"
+#include "entityobserver.h"
 
 namespace ECS
 {
@@ -23,6 +25,13 @@ namespace ECS
          * @param reservedEntityCount How many entities to reserve memory for to start with.
          */
         EntityManager(size_t reservedEntityCount = RESERVED_ENTITY_COUNT);
+
+
+        /**
+         * @brief Destructor. Deallocates all components.
+         *
+         */
+        ~EntityManager();
 
         /**
          * @brief Creates an entity without components.
@@ -57,6 +66,11 @@ namespace ECS
          */
         bool IsDestroyed(Entity entity);
 
+        /**
+         * @brief Get the entities that have been created but not removed.
+         *
+         */
+        const std::set<Entity>& GetActiveEntities() const;
 
         /**
          * @brief Get a bitset determining what components this entity has.
@@ -126,9 +140,49 @@ namespace ECS
         /**
          * @brief This will destroy all removed entities and components.
          *
+         * This is called on automatically whenever a system has finished processing.
          */
         void DestroyRemoved();
+
+
+        /**
+         * @brief Add an entity observer.
+         *
+         */
+        void AddEntityObserver(EntityObserver* observer);
+
+
+        /**
+         * @brief Remove an entity observer. This should be done if an added observer is deleted.
+         *
+         */
+        void RemoveEntityObserver(EntityObserver* observer);
+
+
+        /**
+         * @brief See if an entity observer is added to this entity manager.
+         *
+         */
+        bool IsObserving(EntityObserver* observer);
     private:
+        /**
+         * @brief References a specific component in the component table.
+         *
+         */
+        struct ComponentReference
+        {
+            size_t internalEntityId;
+            ComponentType componentType;
+
+            ComponentReference(size_t internalEntityId, ComponentType componentType);
+            bool operator==(const ComponentReference& rhs) const;
+        };
+
+        /**
+         * @brief Default bitset, used as return value for component flags.
+         *
+         * Used as return value for non-existant entities to be precise.
+         */
         static const std::bitset<MAX_COMPONENTS> ZERO_BITSET;
 
         /**
@@ -144,6 +198,14 @@ namespace ECS
          * removed.
          */
         std::vector<Private::InternalEntity> entities;
+
+        /**
+         * @brief A list of all entities that have been created and not removed.
+         *
+         * This is kept mostly for convenience as it repeats the information that the
+         * translator and entities list provides.
+         */
+        std::set<Entity> activeEntities;
 
         /**
          * @brief Maps the tuple (component type, internal entity id) to a component.
@@ -162,10 +224,10 @@ namespace ECS
          * @brief Keeps track of all entities to destroy.
          *
          * Removed entities are destroyed every time a system finishes processing.
-         * Stores internal IDs.
+         * Stores external UUIDs (since it needs to change the translator when destroying).
          *
          */
-        std::vector<size_t> entitiesToDestroy;
+        std::vector<Entity> entitiesToDestroy;
 
         /**
          * @brief Keeps track of all components to destroy.
@@ -175,7 +237,7 @@ namespace ECS
          *
          * Removed components are destroyed every time a system finishes processing.
          */
-        std::vector<std::pair<size_t, int>> componentsToDestroy;
+        std::vector<ComponentReference> componentsToDestroy;
 
         /**
          * @brief The UUID that will be given to the next entity.
@@ -188,6 +250,12 @@ namespace ECS
          *
          */
         size_t nextInternalId;
+
+        /**
+         * @brief A list of observers that want notifications about changed entities and components.
+         *
+         */
+        std::set<EntityObserver*> observers;
     };
 
 
@@ -211,7 +279,8 @@ namespace ECS
         components[Component<T>::ID][internalId] = component;
         entities[internalId].flags.set(Component<T>::ID, true);
 
-        // TODO: Add to systems with matching aspects.
+        for (auto observer : observers)
+            observer->ComponentAdded(entity, Component<T>::ID);
 
         return component;
     }
@@ -239,10 +308,11 @@ namespace ECS
         assert(internalId < entities.size());
         assert(internalId < components[Component<T>::ID].size());
 
-        componentsToDestroy.push_back(std::make_pair(internalId, Component<T>::ID));
+        componentsToDestroy.push_back(ComponentReference(internalId, Component<T>::ID));
         entities[internalId].flags.set(Component<T>::ID, false);
 
-        // TODO: Reconsider entity for all systems
+        for (auto observer : observers)
+            observer->ComponentRemoved(entity, Component<T>::ID);
     }
 
     template <typename T>
@@ -270,6 +340,6 @@ namespace ECS
 
         Private::ComponentBase* component = components[Component<T>::ID][internalId];
         return component != nullptr &&
-               std::find(componentsToDestroy.begin(), componentsToDestroy.end(), component) != componentsToDestroy.end();
+               std::find(componentsToDestroy.begin(), componentsToDestroy.end(), ComponentReference(internalId, Component<T>::ID)) != componentsToDestroy.end();
     }
 }

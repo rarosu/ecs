@@ -1,0 +1,116 @@
+\hypertarget{class_e_c_s_1_1_entity_observer}{\section{E\-C\-S\-:\-:Entity\-Observer Class Reference}
+\label{class_e_c_s_1_1_entity_observer}\index{E\-C\-S\-::\-Entity\-Observer@{E\-C\-S\-::\-Entity\-Observer}}
+}
+
+
+Can be inherited from to observe additions/removal of entities and components.  
+
+
+
+
+{\ttfamily \#include $<$entityobserver.\-h$>$}
+
+Inheritance diagram for E\-C\-S\-:\-:Entity\-Observer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_e_c_s_1_1_entity_observer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_e_c_s_1_1_entity_observer_aa7add9fe7a0b975714428dbb937e498e}{Entity\-Created} (E\-C\-S\-::\-Entity entity)=0
+\begin{DoxyCompactList}\small\item\em An entity has been created. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_e_c_s_1_1_entity_observer_afa1d1d09e5cbb0070c8ec341f1a107e9}{Entity\-Removed} (E\-C\-S\-::\-Entity entity)=0
+\begin{DoxyCompactList}\small\item\em An entity has been removed. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_e_c_s_1_1_entity_observer_a53776b757b98ac78d504f0cfae0cfa41}{Component\-Added} (E\-C\-S\-::\-Entity entity, E\-C\-S\-::\-Component\-Type component\-Type)=0
+\begin{DoxyCompactList}\small\item\em A component has been added to an entity. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_e_c_s_1_1_entity_observer_a67dfa10ef698b6de537073fb0b0dd83b}{Component\-Removed} (E\-C\-S\-::\-Entity entity, E\-C\-S\-::\-Component\-Type component\-Type)=0
+\begin{DoxyCompactList}\small\item\em A component has been removed from an entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Can be inherited from to observe additions/removal of entities and components. 
+
+An inherited instance of this class can be registered with an \hyperlink{class_e_c_s_1_1_entity_manager}{Entity\-Manager} to observe its additions/removals. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_e_c_s_1_1_entity_observer_a53776b757b98ac78d504f0cfae0cfa41}{\index{E\-C\-S\-::\-Entity\-Observer@{E\-C\-S\-::\-Entity\-Observer}!Component\-Added@{Component\-Added}}
+\index{Component\-Added@{Component\-Added}!ECS::EntityObserver@{E\-C\-S\-::\-Entity\-Observer}}
+\subsubsection[{Component\-Added}]{\setlength{\rightskip}{0pt plus 5cm}virtual void E\-C\-S\-::\-Entity\-Observer\-::\-Component\-Added (
+\begin{DoxyParamCaption}
+\item[{E\-C\-S\-::\-Entity}]{entity, }
+\item[{E\-C\-S\-::\-Component\-Type}]{component\-Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_e_c_s_1_1_entity_observer_a53776b757b98ac78d504f0cfae0cfa41}
+
+
+A component has been added to an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The U\-U\-I\-D of the target entity. \\
+\hline
+{\em component\-Type} & The I\-D of the component type added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_e_c_s_1_1_entity_observer_a67dfa10ef698b6de537073fb0b0dd83b}{\index{E\-C\-S\-::\-Entity\-Observer@{E\-C\-S\-::\-Entity\-Observer}!Component\-Removed@{Component\-Removed}}
+\index{Component\-Removed@{Component\-Removed}!ECS::EntityObserver@{E\-C\-S\-::\-Entity\-Observer}}
+\subsubsection[{Component\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}virtual void E\-C\-S\-::\-Entity\-Observer\-::\-Component\-Removed (
+\begin{DoxyParamCaption}
+\item[{E\-C\-S\-::\-Entity}]{entity, }
+\item[{E\-C\-S\-::\-Component\-Type}]{component\-Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_e_c_s_1_1_entity_observer_a67dfa10ef698b6de537073fb0b0dd83b}
+
+
+A component has been removed from an entity. 
+
+Note that this is called when a component is removed, not when it is destroyed. Also note that this function is not called when an entity is removed, even though all components are removed then.
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The U\-U\-I\-D of the target entity. \\
+\hline
+{\em component\-Type} & The I\-D of the component type added. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_e_c_s_1_1_entity_observer_aa7add9fe7a0b975714428dbb937e498e}{\index{E\-C\-S\-::\-Entity\-Observer@{E\-C\-S\-::\-Entity\-Observer}!Entity\-Created@{Entity\-Created}}
+\index{Entity\-Created@{Entity\-Created}!ECS::EntityObserver@{E\-C\-S\-::\-Entity\-Observer}}
+\subsubsection[{Entity\-Created}]{\setlength{\rightskip}{0pt plus 5cm}virtual void E\-C\-S\-::\-Entity\-Observer\-::\-Entity\-Created (
+\begin{DoxyParamCaption}
+\item[{E\-C\-S\-::\-Entity}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_e_c_s_1_1_entity_observer_aa7add9fe7a0b975714428dbb937e498e}
+
+
+An entity has been created. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The U\-U\-I\-D of the new entity. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_e_c_s_1_1_entity_observer_afa1d1d09e5cbb0070c8ec341f1a107e9}{\index{E\-C\-S\-::\-Entity\-Observer@{E\-C\-S\-::\-Entity\-Observer}!Entity\-Removed@{Entity\-Removed}}
+\index{Entity\-Removed@{Entity\-Removed}!ECS::EntityObserver@{E\-C\-S\-::\-Entity\-Observer}}
+\subsubsection[{Entity\-Removed}]{\setlength{\rightskip}{0pt plus 5cm}virtual void E\-C\-S\-::\-Entity\-Observer\-::\-Entity\-Removed (
+\begin{DoxyParamCaption}
+\item[{E\-C\-S\-::\-Entity}]{entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_e_c_s_1_1_entity_observer_afa1d1d09e5cbb0070c8ec341f1a107e9}
+
+
+An entity has been removed. 
+
+Note that this is called when an entity is removed, not when it is destroyed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The U\-U\-I\-D of the removed entity. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+ecs/include/entityobserver.\-h\end{DoxyCompactItemize}
